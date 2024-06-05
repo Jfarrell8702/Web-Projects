@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Matching Game</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?
+    <link rel=" preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <audio id="audio-player" autoplay loop>
+    <source src="audio/interStellar.mp3" type="audio/mp3">
+  </audio>
+
+  <header>
+    <h1 class="underz celebrate">Logo Matching Game</h1>
+  </header>
+  <section id="game-container">
+
+    <!-- This is where we display the flip and match counters -->
+    <div id="ui-container">
+      <div id="otherz">
+        <span id="timez">
+          <h3 class="timer rainbow-glow-text">
+            <span class="rainbow" id="timer">00:00</span>
+          </h3>
+        </span>
+        <span id="scorez">
+          <h3 class="score rainbow-glow-text">Hi-Score: <span class="rainbow" id="score-count">0</span>
+          </h3>
+        </span>
+      </div>
+
+
+      <div id="countz">
+        <h3 class="rainbow-glow-text"><span
+            style="text-decoration: underline; text-underline-offset: 0.2em">Flips:</span> <span class="rainbow"
+            id="flip-count">0</span></h3>
+        <br>
+        <br>
+        <h3 class="rainbow-glow-text"><span
+            style="text-decoration: underline; text-underline-offset: 0.2em">Matches:</span> <span class="rainbow"
+            id="match-count">0</span></h3>
+      </div>
+    </div>
+
+    <!-- This is where our cards will be rendered -->
+    <div id="card-container"></div>
+    <hr class="rainbow">
+  </section>
+
+
+  <!-- UNCOMMENT BELOW FOR RESET BUTTON! I DISABLED IT BECAUSE I MADE GAME RESTART AUTOMATICALLY 5 SECONDS AFTER WIN! -->
+
+  <!-- <div class="btn-container">
+    <button type="button" class="reset-btn btn btn-light" onclick="resetGame()">Reset</button>
+  </div> -->
+
+  <script type="text/JavaScript" src="https://underscorejs.org/underscore-min.js"></script>
+  <script src="https://bit.ly/3HbMbbF"></script>
+
+  <script src="provided.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

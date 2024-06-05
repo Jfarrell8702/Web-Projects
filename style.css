@@ -1,0 +1,397 @@
+
+:root {
+  --card-width: 125px;
+  --card-height: 175px;
+}
+
+@font-face {
+    font-family: 'entanglementmedium';
+    src: url('entanglement-rgprb-webfont.woff2') format('woff2'),
+         url('entanglement-rgprb-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    color: white;
+
+}
+
+.rainbow {
+   /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 5s infinite; 
+  
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite;
+  
+  /* Standar Syntax */
+  animation: rainbow 5s infinite; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+  0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+   0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+/* Standard Syntax */
+@keyframes rainbow{
+    0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+
+body {
+  margin: 0;
+  background: url(https://i.pinimg.com/originals/d9/af/b2/d9afb2f0c922f34cb6ae8ad219f53ca3.gif);
+  background-position: center;
+   background-repeat: repeat;
+  border: none; /* removes border */
+  color: white;
+  text-shadow: 0px 3px 2px rgba(255, 255, 200, 0.7);
+  min-height: 100vh;
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+h1 {
+  font-size: 70px;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  outline: red;
+  color: white;
+  text-shadow: 4px 4px 3px black;
+  padding-bottom: 2%;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+#match-count, #flip-count {
+  font-size: 40px;
+}
+
+#score-count {
+  font-size: 60px;
+}
+
+#ui-container {
+  text-align: center;
+  
+}
+
+#ui-container h3 {
+  margin: 0;
+  display: inline-block;
+  font-size: 40px;
+  text-align: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#ui-container h4 {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5%;
+  
+}
+
+hr.rainbow {
+    overflow: visible; /* For IE */
+    padding: 5px;
+    border: none;
+    color: white;
+    text-align: center;
+}
+hr:after {
+    content: "♧ ♢ ♡ ♤";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 3em;
+    padding: 0 0.6rem;
+    background: none;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    margin: 2%;
+    margin-bottom: -4%;
+}
+
+@keyframes hr:after{
+    0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+#ui-container h3:first-child {
+  margin-right: 40px;
+}
+
+#card-container {
+  font-size: 0;
+  margin: auto;
+  width: calc((var(--card-width) + 2vw + 12px) * 4);
+  background-color:;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  margin: 1vw;
+  width: var(--card-width);
+  height: var(--card-height);
+  border: 1px solid transparent;  
+  overflow: hidden;
+}
+
+/* Style the two logo images themselves. */
+.card-down,
+.card-up {
+  /* Take images out of the flow. */
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  /* When facing away from the screen each image should be hidden. */
+  backface-visibility: hidden;
+  border-radius: 5px;
+  transition-duration: .3s;
+}
+
+.card-down {
+  background-image: url(img/goodCard.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.card-up {
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.flipped .card-down {
+  transform: rotateY(180deg);
+}
+
+.flipped .card-up {
+  transform: rotateY(0deg);
+}
+
+.image-1 .card-up {
+  background-image: url(https://i.pinimg.com/originals/2b/5c/79/2b5c79ca2090d51ef137f4130d3ee940.jpg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-2 .card-up {
+  background-image: url(https://i.pinimg.com/originals/6b/74/73/6b7473c6b951cc13dd5e60bee1e7b57f.jpg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-3 .card-up {
+  background-image: url(https://images.pond5.com/glowing-neon-twitch-icon-alpha-footage-227436641_iconl.jpeg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-4 .card-up {
+  background-image: url(https://i.pinimg.com/736x/dc/61/f0/dc61f0af8a0c64ae82b5c8fe333b183a.jpg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-5 .card-up {
+  background-image: url(https://i.pinimg.com/736x/59/7d/9e/597d9ee59e7806514b3bf58029732f78.jpg), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-6 .card-up {
+  background-image: url(https://pbs.twimg.com/media/Eiq5KD8XYAE9kop?format=png&name=small), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.glow {
+    border: 1px solid transparent;    
+    transition: border 0.1s linear, box-shadow 0.1s linear;
+}
+
+
+@keyframes border-glow {
+  from {
+    border: 2px solid transparent;   
+    box-shadow: none;
+  }
+
+  80% {
+    border-color: blue;
+    box-shadow: 0 0 10px blue;
+  }
+
+  to {
+    border: 2px solid transparent;   
+    box-shadow: none;
+  }
+}
+
+.border-glow {
+  animation: border-glow 1s;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+}
+
+.reset-btn {
+	margin: 0 0 30px 0;
+	padding: 20px 40px;
+	background-color: transparent;
+  font-family: 'entanglementmedium';
+	color: white;
+	border: 2px solid;
+	border-radius: 10px;
+	font-size: 1.5em;
+}
+
+.reset-btn:hover {
+	cursor: pointer;
+	background-color: white;
+}
+
+@keyframes .reset-btn:hover{
+    0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+.match-border {
+  border: 2px solid white;
+  border-radius: 3px;
+  box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 20px #ffffff80;
+}
+
+@keyframes match-border {
+  from {
+    box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 20px #ffffff80;
+  }
+  to {
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px #ffffff80;
+  }
+}
+
+.card-border { 
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px yellow, 0 0 10px red, 0 0 15px green, 0 0 20px #blue;
+}
+
+@keyframes card-border {
+  from {
+    box-shadow: 0 0 3px white, 0 0 10px white, 0 0 15px white, 0 0 20px #white;
+  }
+  to {
+    box-shadow: 0 0 5px white, 0 0 10px white, 0 0 30px white, 0 0 20px #white;
+  }
+}
+
+#dialog-box {
+  background-color: #4CAF50;
+  border: 2px solid #000000;
+  padding: 20px;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.timer {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+@keyframes celebrate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+.celebrate {
+  animation-name: celebrate;
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+}
+
+body {
+  position: relative;
+}
+
+#card-container {
+  margin-top: -12.5vh;
+}
+
+#ui-container {
+  margin-top: -3%;
+  position: relative;
+}
+
+#otherz {
+  position: relative;
+}
+
+#timez {
+  margin: auto;
+  position: center;
+  
+}
+
+#scorez {
+  margin-right: -3%;
+}
+
+#countz {
+  margin-left: -65vw;
+}
+
